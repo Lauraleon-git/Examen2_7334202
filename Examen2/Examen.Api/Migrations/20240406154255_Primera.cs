@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Examen.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class primera : Migration
+    public partial class Primera : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,7 @@ namespace Examen.Api.Migrations
                 {
                     IdProducto = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NombreProducto = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,17 +65,17 @@ namespace Examen.Api.Migrations
                 name: "Detalles",
                 columns: table => new
                 {
-                    IdDellate = table.Column<int>(type: "int", nullable: false)
+                    IdDetalle = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdPedido = table.Column<int>(type: "int", nullable: false),
                     IdProducto = table.Column<int>(type: "int", nullable: false),
                     Cantidad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Precio = table.Column<int>(type: "int", nullable: false),
-                    Subtotal = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Subtotal = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Detalles", x => x.IdDellate);
+                    table.PrimaryKey("PK_Detalles", x => x.IdDetalle);
                     table.ForeignKey(
                         name: "FK_Detalles_Pedidos_IdPedido",
                         column: x => x.IdPedido,

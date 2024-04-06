@@ -11,12 +11,12 @@ namespace Examen.Shared
     public class Detalle
     {
         [Key]
-        public int IdDellate { get; set; }
+        public int IdDetalle { get; set; }
         public int IdPedido { get; set; }
         public int IdProducto { get; set; }
         public string Cantidad { get; set; }
         public int Precio { get; set; }
-        public string Subtotal { get; set; }
+        public int Subtotal { get; set; }
 
         [ForeignKey("IdPedido")]
         public virtual Pedido? Pedido { get; set; } = null!;

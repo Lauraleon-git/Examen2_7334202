@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen.Api.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20240406123129_primera")]
-    partial class primera
+    [Migration("20240406154255_Primera")]
+    partial class Primera
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,11 +54,11 @@ namespace Examen.Api.Migrations
 
             modelBuilder.Entity("Examen.Shared.Detalle", b =>
                 {
-                    b.Property<int>("IdDellate")
+                    b.Property<int>("IdDetalle")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDellate"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDetalle"));
 
                     b.Property<string>("Cantidad")
                         .IsRequired()
@@ -73,11 +73,10 @@ namespace Examen.Api.Migrations
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
-                    b.Property<string>("Subtotal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Subtotal")
+                        .HasColumnType("int");
 
-                    b.HasKey("IdDellate");
+                    b.HasKey("IdDetalle");
 
                     b.HasIndex("IdPedido");
 
@@ -123,7 +122,7 @@ namespace Examen.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProducto"));
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("NombreProducto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

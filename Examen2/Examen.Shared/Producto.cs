@@ -11,6 +11,6 @@ namespace Examen.Shared
     {
         [Key]
         public int IdProducto { get; set; }
-        public string Nombre { get; set; }
+        public string NombreProducto { get; set; }
     }
 }

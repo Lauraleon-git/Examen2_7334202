@@ -1,4 +1,6 @@
-﻿using Examen.Shared;
+﻿using Examen.Api.Implementacion;
+using Examen.Api.Reportes;
+using Examen.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +16,7 @@ namespace Examen.Api.Contratos
         public Task<bool> EliminarPedido(int id);
         public Task<List<Pedido>> ListarPedidosTodos();
         public Task<Pedido> ObtenerPedidosById(int id);
+        public  Task<List<Reporte1>>Reporte1();
+        public Task<List<ProductoMasPedido>> MasPedidodeProductos();
     }
 }
