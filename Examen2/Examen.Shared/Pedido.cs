@@ -18,6 +18,8 @@ namespace Examen.Shared
 
         [StringLength(maximumLength: 20)]
         public string Estado { get; set; }
+        public virtual List<Detalle> Detalles { get; set; } = new List<Detalle>();
+
 
         [ForeignKey("IdCliente")]
         public virtual Cliente? Cliente { get; set; } = null!;
